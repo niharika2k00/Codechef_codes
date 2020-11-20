@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "xlocale": "c",
+        "iosfwd": "cpp",
+        "xstring": "cpp",
+        "system_error": "c",
+        "vector": "cpp",
+        "set": "cpp",
+        "xstddef": "cpp",
+        "utility": "cpp",
+        "map": "cpp"
+    }
+}
