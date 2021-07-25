@@ -17,6 +17,20 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  ___________________   Factorial finding   ___________________
+ll cal_n(ll n)
+{
+    ll temp = 1;
+    for (ll i = 2; i <= n; i++)
+        temp = temp * i;
+    return temp;
+}
+//function to calculate nCr
+ll nCr(ll n, ll r)
+{
+    return cal_n(n) / (cal_n(r) * cal_n(n - r));
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -25,14 +39,37 @@ int main()
 
     test
     {
-        ll n, q;
+        ll n, q, Odd = 0, Even = 0, i;
         cin >> n >> q;
-        vi arr(n), Left, Right;
-        for (int i = 0; i < n; i++)
+        //   int even[n+1]={0};   <------  array
+        vi arr(n + 1), evnTotal(n + 1, 0), oddTotal(n + 1, 0); // inital value set to 0
+        for (i = 1; i <= n; i++)
             cin >> arr[i];
 
-        for (int i = 0; i < q; i++)
-            cin >> Left[i] >> Right[i];
+        for (i = 1; i <= n; i++)
+        {
+            if (arr[i] % 2 == 0)
+                ++Even;
+            else
+                ++Odd;
+
+            evnTotal[i] = Even;
+            oddTotal[i] = Odd;
+        }
+
+        while (q--)
+        {
+            ll totalTuples, left, right;
+            cin >> left >> right;
+            Even = evnTotal[right] - evnTotal[left - 1];
+            Odd = oddTotal[right] - oddTotal[left - 1];
+            /* 
+            EVEN + EVEN + EVEN =  EVEN 
+            ODD + ODD + EVEN =  EVEN
+             */
+            totalTuples = nCr(Even, 3) + (nCr(Odd, 2) * Even);
+            cout << totalTuples << endl;
+        }
     }
 
     return 0;
