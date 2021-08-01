@@ -34,20 +34,19 @@ int main()
         map<ll, ll> map;
 
         for (i = 0; i < n; i++)
-            cin >> arr[i];
-
-        sort(arr.begin(), arr.end());
-
-        for (i = 0; i < n; i++)
-            map[arr[i]]++;
-
-        for (i = 0; i < n; i++)
         {
-            if (((float)(arr[i] - arr[i + 1]) / (float)arr[i]) < ((float)(arr[i] - arr[i + 1]) / (float)arr[i + 1]))
-                count++;
+            cin >> arr[i];
+            map[arr[i]]++;
         }
 
-        /*  for (i = 0; i < n; i++)
+        for (auto it : map)
+            count = count + ((n - it.second) * it.second);
+
+        cout << count << endl;
+
+        /* 
+        // O(n^2) NAIVE METHOD / BRUTE FORCE
+         for (i = 0; i < n; i++)
             cin >> arr[i];
 
         for (i = 0; i < n - 1; i++)
@@ -57,9 +56,9 @@ int main()
                 if (((float)(arr[i] - arr[j]) / (float)arr[i]) < ((float)(arr[i] - arr[j]) / (float)arr[j]))
                     count++;
             }
-        } */
-
-        cout << count * 2 << endl;
+        }
+         cout << count * 2 << endl;
+         */
     }
     return 0;
 }
