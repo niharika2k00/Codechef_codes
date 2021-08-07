@@ -60,3 +60,13 @@ int main()
     }
     return 0;
 }
+
+test
+{
+    int g1, s1, b1, g2, s2, b2;
+    cin >> g1 >> s1 >> b1 >> g2 >> s2 >> b2;
+    if (g1 + s1 + b1 > g2 + s2 + b2)
+        cout << "1\n";
+    else
+        cout << "0\n";
+}
