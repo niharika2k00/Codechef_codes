@@ -40,7 +40,7 @@ Frequency Array ==> 2 <- 3        max-unique =    1 (n - 1)
 
 */
 
-    /*     test
+    test
     {
         ll n, i, count = 0;
         cin >> n;
@@ -64,38 +64,5 @@ Frequency Array ==> 2 <- 3        max-unique =    1 (n - 1)
         }
 
         cout << count << endl;
-    } */
-
-    int i = 0, del, flag = 0;
-    string s = "aaabaaaa";
-
-    /*  for (i = 0; i < s.length(); i++)
-    {
-        if ((s[i] == s[i + 1]) && (s[i + 1] == s[i + 2])) // consecutive 3 equal
-        {
-            s.erase(s.begin() + i);
-            // s.erase(s.begin() + 1);
-            cout << "Yes\n";
-            flag = 1;
-        }
-    } */
-
-    while (i < s.length())
-    {
-        if ((s[i] == s[i + 1]) && (s[i + 1] == s[i + 2])) // consecutive 3 equal
-        {
-            s.erase(s.begin() + i);
-            cout << "Yes\n";
-            i = i;
-        }
-        else
-        {
-            i++;
-        }
     }
-
-    cout << s;
-    cout << "\n End";
-
-    return 0;
 }
