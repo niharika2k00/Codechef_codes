@@ -34,7 +34,7 @@ Suppose for 5 : (n - 1) ways are there means 4 Unique ways
 (4 . 1)
 
 Array : 2   2   4   4   2   6
-Frequency Array ==> 2 <- 3        max-unique =    1 (n - 1)    
+Frequency Array ==> 2 <- 3         max-unique =   1 (n - 1)    
                     4 <- 2         max-unique =   3
                     6 <- 1         max-unique =   5
 
