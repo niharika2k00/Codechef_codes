@@ -54,19 +54,54 @@ int main()
                 {
                     cout << "Inconsistent" << endl;
                     flag = 1;
-                    break;
+                    // break;
                 }
             }
             if (count > m)
             {
                 cout << "Inconsistent" << endl;
                 flag = 1;
-                break;
+                // break;
             }
         }
 
         if (flag == 0) //  0
             cout << "Consistent" << endl;
     }
+
+    //  _________________________    USING HASH MAP   _________________________
+
+    test
+    {
+        unordered_map<int, bool> mp;
+        bool flag = true;
+
+        while (q--)
+        {
+            cin >> ch;
+            cin >> id;
+
+            if (ch == '+')
+            {
+                mp[id] = true;
+                if (mp.size() > m)
+                    flag = false;
+            }
+            // '-' Case
+            else
+            {
+                if (mp.find(id) != mp.end()) // mp[i] =  TRUE ,  Exists
+                    mp.erase(mp.find(id));
+                else
+                    flag = false;
+            }
+        }
+
+        if (flag)
+            cout << "Consistent\n";
+        else
+            cout << "Insonsistent\n";
+    }
+
     return 0;
 }
