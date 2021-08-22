@@ -40,22 +40,20 @@ int main()
 
         for (i = 0; i < n; i++)
         {
-            if (prog[i] == '1' && eng[i] == '0')
+            if (prog[i] == '1' /* && eng[i] == '0' */)
                 onlyProg++;
-            else if (eng[i] == '1' && prog[i] == '0')
+            if (eng[i] == '1' /* && prog[i] == '0' */)
                 onlyEng++;
-            else if (prog[i] == '1' && eng[i] == '1')
-                both++;
+            // else if (prog[i] == '1' && eng[i] == '1')
+            // both++;
         }
 
-        while (both * 2 > n)
-            both--;
+        // while (both * 2 > n)
+        // both--;
 
-        result = min(onlyProg, onlyEng);
-        // cout << "ans : \n " << onlyProg << " " << onlyEng << " " << both << endl;
-        // cout << "result " << result << endl;
-
-        cout << (result + both) << endl;
+        cout << min(onlyProg, min(onlyEng, n / 2)) << endl;
+        // result = min(onlyProg, onlyEng);
+        // cout << (result + both) << endl;
     }
 
     return 0;

@@ -31,7 +31,7 @@ int main()
 
     test
     {
-        int n, i, MAX = 0;
+        int n, i, value = 0;
         cin >> n;
         vector<int> vec(n);
         map<int, int> mp;
@@ -40,21 +40,21 @@ int main()
         {
             cin >> vec[i];
             mp[vec[i]]++;
-            MAX = max(MAX, mp[vec[i]]);
+            value = max(value, mp[vec[i]]);
         }
 
         if (n <= 2)
         {
             cout << "0" << endl;
-            continue;
+            continue; // next iteration runs
         }
-        if (MAX == 1)
+        else if (value == 1)
         {
             cout << n - 2 << endl;
             continue;
         }
 
-        cout << n - MAX << endl;
+        cout << n - value << endl;
     }
 
     return 0;
