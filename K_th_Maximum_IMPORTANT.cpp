@@ -60,12 +60,22 @@ int main()
 
 /* 
  test case : 
+a) 
 1
 4 2
 2 5 6 1
 
 2 answer
-(2 5 , 5 6)
+(5 6 1 , 5 6)
+
+
+b)
+7 3 
+1 2  3 4 5 2 4
+
+answer : max element = 5
+         so subarray will have ele 5 in the 3rd POSITION always
+         [3 4 5] , [3 4 5 2]  , [3 4 5 2 4]
 
 EXPLANATION :: 
 
