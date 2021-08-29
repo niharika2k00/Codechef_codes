@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :   https://www.codechef.com/LTIME99C/problems/CROSBLK 
+ Code Link :   https://www.codechef.com/START10C/problems/HARDBET 
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -29,6 +29,21 @@ int main()
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+
+    test
+    {
+        int Sa, Sb, Sc;
+        cin >> Sa >> Sb >> Sc;
+
+        if (Sa <= Sb && Sa <= Sc)
+            cout << "Draw\n";
+
+        else if (Sb <= Sa && Sb <= Sc)
+            cout << "Bob\n";
+
+        else
+            cout << "Alice\n";
+    }
 
     return 0;
 }
