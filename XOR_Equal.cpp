@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/SEPT21C/problems/SHUFFLIN  
+ Code Link :   https://www.codechef.com/SEPT21C/problems/PALINT 
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -32,25 +32,6 @@ int main()
 
     test
     {
-        int i, odd = 0, even = 0, n, oddNums = 0, evenNums = 0, ans = 0;
-        cin >> n;
-        int arr[n];
-        for (i = 1; i <= n; i++)
-            cin >> arr[i];
-
-        even = n / 2;
-        odd = n - even;
-
-        for (i = 1; i <= n; i++)
-        {
-            if (arr[i] % 2 == 0)
-                evenNums++;
-            else
-                oddNums++;
-        }
-
-        ans = min(oddNums, even) + min(evenNums, odd);
-        cout << ans << endl;
     }
 
     return 0;
