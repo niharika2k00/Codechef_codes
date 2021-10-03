@@ -1,8 +1,9 @@
+
 /* 
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    https://www.codechef.com/OCT21C/problems/MIXTURE
+ Code Link :    https://www.codechef.com/OCT21C/problems/THREEBOX
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -33,17 +34,6 @@ int main()
 
     test
     {
-        int a, b;
-        cin >> a >> b;
-
-        if (a > 0 && b > 0)
-            cout << "Solution\n";
-
-        else if (b == 0)
-            cout << "Solid\n";
-
-        else
-            cout << "Liquid\n";
     }
 
     return 0;
