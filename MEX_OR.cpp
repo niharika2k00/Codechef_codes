@@ -1,9 +1,8 @@
-
 /* 
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    https://www.codechef.com/OCT21C/problems/THREEBOX
+ Code Link :   https://www.codechef.com/OCT21C/problems/MEXOR 
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -34,17 +33,6 @@ int main()
 
     test
     {
-        int a, b, c, d, flag = 0;
-        cin >> a >> b >> c >> d;
-
-        if (a + b + c <= d)
-            flag = 1;
-        else if (a + b <= d || b + c <= d || c + a <= d)
-            flag = 2;
-        else
-            flag = 3;
-
-        cout << flag << endl;
     }
 
     return 0;

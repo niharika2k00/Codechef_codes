@@ -1,9 +1,8 @@
-
 /* 
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    https://www.codechef.com/OCT21C/problems/THREEBOX
+ Code Link :  https://www.codechef.com/OCT21C/problems/ANDSUBAR  
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -34,17 +33,31 @@ int main()
 
     test
     {
-        int a, b, c, d, flag = 0;
-        cin >> a >> b >> c >> d;
+        ll n, i, bitwiseAnd = 0, k = 1, maxlength = 0;
+        cin >> n;
 
-        if (a + b + c <= d)
-            flag = 1;
-        else if (a + b <= d || b + c <= d || c + a <= d)
-            flag = 2;
+        // for (i = 1; i <= n; i++)
+        // {
+        //     // bitwiseAnd = bitwiseAnd & arr[i];
+        // if (bitwiseAnd > 0)
+        //     k   2 < n= i + 1;
+
+        if (n == 1)
+        {
+            cout << "1\n";
+            continue;
+        }
+
+        while (k * 2 <= n)
+            k = k * 2;
+
+        maxlength = n - k + 1;
+
+        if (n == k)
+            cout << n / 2 << endl;
         else
-            flag = 3;
-
-        cout << flag << endl;
+            cout << max(maxlength, k / 2) << endl;
+        // }
     }
 
     return 0;
