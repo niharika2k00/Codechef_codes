@@ -33,6 +33,25 @@ int main()
 
     test
     {
+        ll x, k = 1;
+        cin >> x;
+
+        if (x == 2 || x == 1)
+            cout << "2\n";
+        else if (x == 0)
+            cout << "1\n";
+        else
+        {
+            while (k * 2 <= x)
+                k = k * 2;
+
+            if (k == x)
+                cout << x << endl;
+            else if (x == 2 * k - 1)
+                cout << x + 1 << endl;
+            else
+                cout << k << endl;
+        }
     }
 
     return 0;

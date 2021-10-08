@@ -31,6 +31,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    // . Find the length of the longest subarray in this sequence such that the bitwise AND of all elements in the subarray is positive.
     test
     {
         ll n, i, bitwiseAnd = 0, k = 1, maxlength = 0;
@@ -48,7 +49,7 @@ int main()
             continue;
         }
 
-        while (k * 2 <= n)
+        while (k * 2 <= n) //  2 ^ n
             k = k * 2;
 
         maxlength = n - k + 1;
