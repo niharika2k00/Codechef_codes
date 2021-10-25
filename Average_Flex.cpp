@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/COOK134C/problems/CHEFSLP
+ Code Link :  https://www.codechef.com/COOK134C/problems/AVGFLEX
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -33,12 +33,26 @@ int main()
 
     test
     {
-        int n, l, x, ans = 0, r = 0;
-        cin >> n >> l >> x;
+        int n, i, j, count = 0, boastStudent = 0;
+        cin >> n;
+        int a[n];
+        for (i = 0; i < n; i++)
+            cin >> a[i];
 
-        r = n - l;
-        ans = x * (min(l, r));
-        cout << ans << endl;
+        for (i = 0; i < n; i++)
+        {
+            count = 0;
+            for (j = 0; j < n; j++)
+            {
+                if (a[i] >= a[j])
+                    count++; //  scoring less than and equals to
+            }
+            if (count > n - count)
+                boastStudent++;
+        }
+
+        cout << boastStudent << endl;
     }
+
     return 0;
 }

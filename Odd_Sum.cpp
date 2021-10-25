@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/COOK134C/problems/CHEFSLP
+ Code Link :  https://www.codechef.com/COOK134C/problems/ODDSUM
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -33,12 +33,7 @@ int main()
 
     test
     {
-        int n, l, x, ans = 0, r = 0;
-        cin >> n >> l >> x;
-
-        r = n - l;
-        ans = x * (min(l, r));
-        cout << ans << endl;
     }
+
     return 0;
 }
