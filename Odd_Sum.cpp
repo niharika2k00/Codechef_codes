@@ -33,6 +33,22 @@ int main()
 
     test
     {
+        ll n;
+        cin >> n;
+
+        if (n == 1 || n == 2)
+            cout << "1\n";
+        else
+        {
+            /*          1 + 0 + (even numbers)
+                        1 + 0 + [2 , 4 ,6 ,8 ,... ]
+                        N = 5  ,        1 + 0 + [3 terms]
+                        N      ,        1 + 0 + n(n+1)
+             */
+
+            n = n - 2;
+            cout << 1 + n * (n + 1) << endl;
+        }
     }
 
     return 0;
