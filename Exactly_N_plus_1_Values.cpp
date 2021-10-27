@@ -33,6 +33,25 @@ int main()
 
     test
     {
+        ll n, power, i, sum = 0;
+        cin >> n;
+        power = pow(2, n);
+
+        if (n == 1)
+            cout << "1 1\n";
+        else
+        {
+            for (i = 1; i < n; i++)
+            {
+                cout << i << " ";
+                sum = sum + i;
+            }
+            // cout << i - 1 << " " << power - (n * (n + 1) / 2) + 1;
+            cout << i - 1 << " ";
+            sum = sum + i - 1;
+            cout << power - sum << endl;
+        }
     }
+
     return 0;
 }
