@@ -31,5 +31,21 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    int n, v;
+    cin >> n >> v;
+    int min = 0, max = (n * (n - 1)) / 2; //  n * (n+1) / 2 ,  but here n=(n-1)
+    if (v == 1)
+    {
+        cout << max << ' ' << max << endl;
+        return;
+    }
+
+    if (v >= n - 1)
+        min = n - 1; //  1 * (n-1)
+    else
+        min += v + ((n - v) * (n - v + 1)) / 2 - 1;
+
+    cout << max << ' ' << min << endl;
+
     return 0;
 }
