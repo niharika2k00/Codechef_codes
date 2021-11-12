@@ -37,8 +37,23 @@ int main()
         cin >> x >> y;
 
         money = x + (2 * y);
-        if (money % 2 == 0)
-            cout << "YES\n";
+        // if (money % 2 == 0)
+        // cout << "YES\n";
+        // else
+        // cout << "NO\n";
+
+        if (x % 2 == 0)
+        {
+            if (x == 0)
+            {
+                if (y % 2 == 0)
+                    cout << "YES\n";
+                else
+                    cout << "NO\n";
+            }
+            else
+                cout << "YES\n";
+        }
         else
             cout << "NO\n";
     }
