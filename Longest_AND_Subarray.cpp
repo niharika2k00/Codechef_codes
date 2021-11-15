@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/OCT21C/problems/ANDSUBAR  
- Time Complexity :  
+ Code Link :  https://www.codechef.com/OCT21C/problems/ANDSUBAR
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
