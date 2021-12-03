@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/FOUR21C/problems/S02E10
+ Code Link :  https://www.codechef.com/FOUR21C/problems/S06E06
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -31,30 +31,32 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    /*
+         METHOD - I      First SORT the array then , INCREMENT arr[0] = arr[0] +  1      K times.
+
+         METHOD - II     We can take another Vector / Multiset and do the same but it will increase the time complexity.
+     */
     test
     {
-        int n, x, k, i, count = 0, diff = 0;
-        cin >> n >> x >> k;
+        string s;
+        cin >> s;
+        ll k, i, product = 1;
+        cin >> k;
 
-        vector<int> a(n), b(n);
-        for (i = 0; i < n; i++)
-            cin >> a[i];
+        sort(s.begin(), s.end());
 
-        for (i = 0; i < n; i++)
-            cin >> b[i];
-
-        // Algorithm
-        for (i = 0; i < n; i++)
+        while (k--) //  when digit NOT 9
         {
-            diff = abs(a[i] - b[i]);
-            if (diff <= k)
-                count++;
+            if (s[0] == '9')
+                continue;
+            s[0] = s[0] + 1;
+            sort(s.begin(), s.end());
         }
 
-        if (count >= x)
-            cout << "YES\n";
-        else
-            cout << "NO\n";
+        for (i = 0; i < s.size(); i++)
+            product = product * (s[i] - '0'); // ASCII character '0' is 48.
+
+        cout << product << endl;
     }
 
     return 0;
