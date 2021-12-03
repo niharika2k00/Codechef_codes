@@ -31,5 +31,23 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    test
+    {
+        lli n, i, maxTime = 0, minElement;
+        cin >> n;
+        vector<int> vec(n);
+        for (i = 0; i < n; i++)
+            cin >> vec[i];
+
+        minElement = *min_element(vec.begin(), vec.end());
+        maxTime = minElement * n; // minimum num of times the bowl rotates
+
+        for (i = 0; i < n; i++)
+            if (vec[i] > minElement)
+                maxTime++;
+
+        cout << maxTime << endl;
+    }
+
     return 0;
 }
