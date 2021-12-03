@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/LTIME102C/problems/MINPIZZAS
+ Code Link :  https://www.codechef.com/FOUR21C/problems/S02E10
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -25,13 +25,6 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-lli gcd(lli a, lli b)
-{
-    if (a == 0)
-        return b;
-    return gcd(b % a, a);
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -40,11 +33,6 @@ int main()
 
     test
     {
-        lli n, k, ans = 0, res = 0;
-        cin >> n >> k;
-
-        ans = n / gcd(n, k);
-        cout << ans << endl;
     }
 
     return 0;
