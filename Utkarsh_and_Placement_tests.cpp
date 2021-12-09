@@ -32,8 +32,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    test{
-        
+    test
+    {
+        char a, b, c, x, y;
+        cin >> a >> b >> c;
+        cin >> x >> y;
     }
 
     return 0;
