@@ -37,7 +37,7 @@ void solve()
         hashMap[v[i]]++;
     }
 
-    for (auto it : hashMap)
+    for (auto &it : hashMap)
         if (it.second > maxFreq)
         {
             maxEle = it.first;
