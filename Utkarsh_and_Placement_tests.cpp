@@ -36,7 +36,16 @@ int main()
     {
         char a, b, c, x, y;
         cin >> a >> b >> c;
+
+        // string s[3];
+        // cin >> s[0] >> s[1] >> s[2];
         cin >> x >> y;
+
+        if (a == x || a == y)
+            cout << a << endl;
+
+        else
+            cout << b << endl;
     }
 
     return 0;
