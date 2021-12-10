@@ -33,46 +33,42 @@ int main()
 
     test
     {
-        int i, hill, valley, zero = 0, one = 0;
+        int i, hill, valley, minimum = 0, zero = 0, one = 0;
         cin >> hill >> valley;
-        // string str;
-        vector<int> str;
+        string str;
 
-        if (hill > valley)
+        if (hill == valley)
         {
-            one = hill;
-            zero = hill + 1;
-        }
-        else if (hill < valley)
-        {
-            zero = valley;
-            one = valley + 1;
-        }
-        else if (hill == valley)
-        {
-            zero = hill + 1;
-            one = hill + 1;
+            for (i = 0; i < hill + 1; i++) //  hill+1 times append into string
+                str = str + "01";
         }
 
-        int len = (zero + one);
-        cout << "len: " << len;
+        else if (hill > valley)
+        {
+            minimum = min(hill, valley);
+            while (minimum--) // basically for Valley
+                str = str + "01";
+
+            int diff = hill - valley;
+            for (i = 0; i < diff; i++)
+                str = str + "010";
+        }
+
+        else if (valley > hill)
+        {
+            minimum = min(hill, valley);
+            while (minimum--)
+                str = str + "10";
+
+            int diff = valley - hill;
+            for (i = 0; i < diff; i++)
+                str = str + "101";
+        }
+
+        int len = str.length();
+        cout << len << endl;
         for (i = 0; i < len; i++)
-        {
-            if (i % 2 == 0 && zero != 0) //  even places
-            {
-                str[i] = 0;
-                zero--;
-            }
-            else if (i % 2 != 0 && one != 0) // odd places
-            {
-                str[i] = 1;
-                one--;
-            }
-        }
-
-        // cout << str.size() << endl;
-        // for (i = 0; i < len; i++)
-        //     cout << str[i];
+            cout << str[i];
 
         cout << endl;
     }
