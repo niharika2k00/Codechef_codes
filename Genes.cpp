@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/LTIME102C/problems/RPDRDNG
+ Code Link :  https://www.codechef.com/START20C/problems/GENE01
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -31,9 +31,14 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    test
-    {
-    }
+    char a, b;
+    cin >> a >> b;
 
+    if (a == b)
+        cout << a << endl;
+    else if (a == 'R' || b == 'R')
+        cout << "R\n";
+    else
+        cout << "B\n";
     return 0;
 }
