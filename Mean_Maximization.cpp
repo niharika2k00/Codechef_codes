@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/COOK137C/problems/NOPAL
+ Code Link :  https://www.codechef.com/COOK137C/problems/MEANMAX
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -33,21 +33,25 @@ int main()
 
     test
     {
-        int len, i, a = 97;
-        string str;
-
+        int i, len;
+        float sum = 0, mean1 = 0, mean2 = 0;
         cin >> len;
+        vector<int> vec(len);
 
-        // ascii values a = 97 to z = 122
-        while (len--)
+        for (i = 0; i < len; i++)
         {
-            if (a == 122)
-                a = 97;
-            cout << (char)a;
-            a++;
+            cin >> vec[i];
+            sum = sum + vec[i];
         }
 
-        cout << endl;
+        sort(vec.begin(), vec.end());
+
+        sum = sum - vec[len - 1]; //  sum - lastElement
+        mean1 = sum / (len - 1);
+        mean2 = vec[len - 1];
+
+        cout << fixed << setprecision(6) << (mean1 + mean2) << endl;
     }
+
     return 0;
 }
