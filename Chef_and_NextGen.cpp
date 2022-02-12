@@ -25,6 +25,20 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+void solve()
+{
+    int x, y, a, b;
+    cin >> a >> b >> x >> y;
+
+    int totalPower = x * y;
+    int provide = a * b; // for b years
+
+    if (totalPower >= provide)
+        cout << "YES" << endl;
+    else
+        cout << "NO" << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -33,6 +47,7 @@ int main()
 
     test
     {
+        solve();
     }
 
     return 0;

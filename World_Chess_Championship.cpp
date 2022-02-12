@@ -25,6 +25,26 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+void solve()
+{
+    int x, i, result = 0, chef = 0, draw = 0, carlsen = 0;
+    cin >> x;
+    string s;
+    cin >> s;
+
+    for (i = 0; i < 14; i++)
+    {
+        if (s[i] == 'C')
+            carlsen++;
+        else if (s[i] == 'N')
+            chef++;
+        else
+            draw++;
+    }
+
+    if ()
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -33,6 +53,7 @@ int main()
 
     test
     {
+        solve();
     }
 
     return 0;
