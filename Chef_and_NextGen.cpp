@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/LTIME104C/problems/SUBPERM
+ Code Link :  https://www.codechef.com/FEB222C/problems/HELIUM3
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -25,42 +25,11 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void solve()
-{
-    int len, k, i;
-    cin >> len >> k;
-
-    vector<int> vec;
-    for (i = 1; i <= len; i++)
-        vec.push_back(i);
-
-    if (len > 1 && k == 1)
-    {
-        cout << "-1\n";
-        return;
-    }
-
-    // K good subsequence means  (n - k) we have to reverse.
-    for (i = 1; i < k; i++)
-        cout << i << " ";
-
-    // Reverse
-    for (i = len; i >= k; i--)
-        cout << i << " ";
-
-    cout << endl;
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    test
-    {
-        solve();
-    }
 
     return 0;
 }

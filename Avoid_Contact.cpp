@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/LTIME104C/problems/SUBPERM
+ Code Link :  https://www.codechef.com/START24C/problems/AVOIDCONTACT
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,28 +27,22 @@ using namespace std;
 
 void solve()
 {
-    int len, k, i;
-    cin >> len >> k;
+    int total = 0, affected = 0;
+    cin >> total >> affected;
 
-    vector<int> vec;
-    for (i = 1; i <= len; i++)
-        vec.push_back(i);
-
-    if (len > 1 && k == 1)
+    if (affected == 0)
     {
-        cout << "-1\n";
+        cout << total << endl;
         return;
     }
 
-    // K good subsequence means  (n - k) we have to reverse.
-    for (i = 1; i < k; i++)
-        cout << i << " ";
+    if (affected == total)
+    {
+        cout << total + (total - 1) << endl;
+        return;
+    }
 
-    // Reverse
-    for (i = len; i >= k; i--)
-        cout << i << " ";
-
-    cout << endl;
+    cout << total + affected << endl;
 }
 
 int main()

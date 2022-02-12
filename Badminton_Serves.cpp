@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/LTIME104C/problems/SUBPERM
+ Code Link :  https://www.codechef.com/START24C/problems/BADMINTON
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,28 +27,11 @@ using namespace std;
 
 void solve()
 {
-    int len, k, i;
-    cin >> len >> k;
+    int p;
+    cin >> p;
 
-    vector<int> vec;
-    for (i = 1; i <= len; i++)
-        vec.push_back(i);
-
-    if (len > 1 && k == 1)
-    {
-        cout << "-1\n";
-        return;
-    }
-
-    // K good subsequence means  (n - k) we have to reverse.
-    for (i = 1; i < k; i++)
-        cout << i << " ";
-
-    // Reverse
-    for (i = len; i >= k; i--)
-        cout << i << " ";
-
-    cout << endl;
+    int ans = p / 2;
+    cout << ans + 1 << endl;
 }
 
 int main()
