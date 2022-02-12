@@ -2,8 +2,8 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/FEB222C/problems/HELIUM3
- Time Complexity : https://www.codechef.com/FEB222C/problems/HELIUM3
+ Code Link :  https://www.codechef.com/FEB222C/problems/WCC
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
