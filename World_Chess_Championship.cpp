@@ -27,7 +27,7 @@ using namespace std;
 
 void solve()
 {
-    int x, i, result = 0, chef = 0, draw = 0, carlsen = 0;
+    int x, i, result = 0, chef = 0, carlsen = 0;
     cin >> x;
     string s;
     cin >> s;
@@ -35,14 +35,26 @@ void solve()
     for (i = 0; i < 14; i++)
     {
         if (s[i] == 'C')
-            carlsen++;
+            carlsen += 2;
         else if (s[i] == 'N')
-            chef++;
+            chef += 2;
         else
-            draw++;
+        {
+            chef += 1;
+            carlsen += 1;
+        }
     }
 
-    if ()
+    if (chef > carlsen)
+        result = 40 * x;
+
+    else if (carlsen > chef)
+        result = 60 * x;
+
+    else if (chef == carlsen)
+        result = 55 * x;
+
+    cout << result << endl;
 }
 
 int main()
