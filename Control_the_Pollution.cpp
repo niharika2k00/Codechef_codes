@@ -27,13 +27,23 @@ using namespace std;
 
 void solve()
 {
-    int n, x, y;
-    cin >> n >> x >> y;
+    int human, x, y;
+    cin >> human >> x >> y;
 
-    // int result = (n + 99) / 100 * x;
-    // result = min(result, (n + 3) / 4 * y);
-    // result = min(result, ((n / 100) * x) + ((n % 100) + 3) / 4 * y);
+    // int result = (human + 99) / 100 * x;
+    // result = min(result, (human + 3) / 4 * y);
+    // result = min(result, ((human / 100) * x) + ((human % 100) + 3) / 4 * y);
     // cout << result << endl;
+
+    double bus = ceil(human / (double)100);
+    double car = ceil(human / (double)4);
+
+    ll b = n / 100;
+    ll remaining = n % 100;
+    ll c = ceil(remaining / (double)4);
+
+    ll res = min({bus * x, car * y, b * x + c * y});
+    cout << res << endl;
 }
 
 int main()
