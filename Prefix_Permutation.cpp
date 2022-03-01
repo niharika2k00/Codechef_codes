@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/START27C/problems/STR_REVERSE
+ Code Link :  https://www.codechef.com/COOK138C/problems/PREFPERM
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,23 +27,6 @@ using namespace std;
 
 void solve()
 {
-    string str, reverseStr;
-    cin >> str;
-    int i = 0, len = str.length(), count = 0, j = 0;
-
-    reverseStr = str;
-    reverse(reverseStr.begin(), reverseStr.end());
-
-    while (i < len)
-    {
-        if (str[i] == reverseStr[j])
-            j++;
-        else
-            count++;
-        i++;
-    }
-
-    cout << count << endl;
 }
 
 int main()

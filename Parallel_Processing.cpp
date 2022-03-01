@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/START27C/problems/STR_REVERSE
+ Code Link :  https://www.codechef.com/LTIME105C/problems/PLPROCESS
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,23 +27,43 @@ using namespace std;
 
 void solve()
 {
-    string str, reverseStr;
-    cin >> str;
-    int i = 0, len = str.length(), count = 0, j = 0;
+    int n, i, minTime = 0, sum = 0, res = 0;
+    cin >> n;
+    vector<int> vec(n);
+    vector<int> prefixSum(n);
 
-    reverseStr = str;
-    reverse(reverseStr.begin(), reverseStr.end());
-
-    while (i < len)
+    for (i = 0; i < n; i++)
     {
-        if (str[i] == reverseStr[j])
-            j++;
-        else
-            count++;
-        i++;
+        cin >> vec[i];
+        sum = sum + vec[i];
     }
 
-    cout << count << endl;
+    if (n == 1)
+    {
+        cout << vec[0] << endl;
+        return;
+    }
+
+    prefixSum[0] = vec[0];
+    for (i = 1; i < n; i++)
+        prefixSum[i] = prefixSum[i - 1] + vec[i];
+
+    minTime = sum;
+
+    for (i = 0; i < n; i++)
+        minTime = min(max(prefixSum[i], sum - prefixSum[i]), minTime);
+
+    /*  if (n > 1)
+     {
+         if (n % 2 == 0)
+             res = sum / 2;
+         else
+             res = sum / 2 + 1;
+     }
+     else
+         res = sum; */
+
+    cout << minTime << endl;
 }
 
 int main()

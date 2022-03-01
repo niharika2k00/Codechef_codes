@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/START27C/problems/STR_REVERSE
+ Code Link :  https://www.codechef.com/LTIME105C/problems/DISTCON
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,23 +27,21 @@ using namespace std;
 
 void solve()
 {
-    string str, reverseStr;
-    cin >> str;
-    int i = 0, len = str.length(), count = 0, j = 0;
+    int d;
+    cin >> d;
 
-    reverseStr = str;
-    reverse(reverseStr.begin(), reverseStr.end());
-
-    while (i < len)
+    if (d == 1 || d % 2)
     {
-        if (str[i] == reverseStr[j])
-            j++;
-        else
-            count++;
-        i++;
+        cout << "-1" << endl;
+        return;
     }
 
-    cout << count << endl;
+    d = d / 2;
+
+    cout << 0 << " " << d << endl;
+    cout << d << " " << 0 << endl;
+    cout << 0 << " " << -(d) << endl;
+    cout << -(d) << " " << 0 << endl;
 }
 
 int main()
@@ -52,10 +50,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    test
-    {
-        solve();
-    }
+    solve();
 
     return 0;
 }
