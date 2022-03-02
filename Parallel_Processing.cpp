@@ -27,10 +27,10 @@ using namespace std;
 
 void solve()
 {
-    int n, i, minTime = 0, sum = 0, res = 0;
+    int n, i, minTime = INT_MAX, sum = 0, res = 0, leftSum = 0, rightSum = 0, maxBetweenTwoProcessor = 0;
     cin >> n;
     vector<int> vec(n);
-    vector<int> prefixSum(n);
+    vector<int> prefixSum(n, 0);
 
     for (i = 0; i < n; i++)
     {
@@ -38,30 +38,19 @@ void solve()
         sum = sum + vec[i];
     }
 
-    if (n == 1)
-    {
-        cout << vec[0] << endl;
-        return;
-    }
-
     prefixSum[0] = vec[0];
     for (i = 1; i < n; i++)
         prefixSum[i] = prefixSum[i - 1] + vec[i];
 
-    minTime = sum;
-
+    //   Logic
     for (i = 0; i < n; i++)
-        minTime = min(max(prefixSum[i], sum - prefixSum[i]), minTime);
+    {
+        leftSum = prefixSum[i];
+        rightSum = sum - prefixSum[i];
 
-    /*  if (n > 1)
-     {
-         if (n % 2 == 0)
-             res = sum / 2;
-         else
-             res = sum / 2 + 1;
-     }
-     else
-         res = sum; */
+        maxBetweenTwoProcessor = max(leftSum, rightSum); //  if one completes at 4 mins and other at 5 mins ,then take 5 mins to Complete the whole task
+        minTime = min(minTime, maxBetweenTwoProcessor);
+    }
 
     cout << minTime << endl;
 }
