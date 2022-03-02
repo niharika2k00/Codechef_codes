@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/COOK138C/problems/PERFPERM
+ Code Link :  https://www.codechef.com/START28C/problems/PERMXORITY
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,20 +27,29 @@ using namespace std;
 
 void solve()
 {
-    int n, k, i;
-    cin >> n >> k;
+    int n, i;
+    cin >> n;
 
-    if (n == 1 && k == 1)
+    if (n == 2)
     {
-        cout << 1 << endl;
+        cout << "-1\n";
         return;
     }
 
-    for (i = 1; i <= k; i++)
-        cout << i << " ";
+    //  When N is ODD print all
+    if (n % 2 != 0)
+    {
+        for (i = 1; i <= n; i++)
+            cout << i << " ";
+    }
 
-    for (i = k + 1; i <= n; i++)
-        cout << 1 << " ";
+    else
+    {
+        for (i = n - 1; i >= 2; i--)
+            cout << i << " ";
+
+        cout << n << " " << 1;
+    }
 
     cout << endl;
 }

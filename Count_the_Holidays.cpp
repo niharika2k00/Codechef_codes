@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/COOK138C/problems/PERFPERM
+ Code Link :  https://www.codechef.com/START28C/problems/SUNDAY
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -27,22 +27,23 @@ using namespace std;
 
 void solve()
 {
-    int n, k, i;
-    cin >> n >> k;
+    int n, i, getHolidays = 0;
+    cin >> n;
+    vector<int> vec(n);
+    for (i = 0; i < n; i++)
+        cin >> vec[i];
 
-    if (n == 1 && k == 1)
+    getHolidays = 8;
+
+    for (i = 0; i < n; i++)
     {
-        cout << 1 << endl;
-        return;
+        if (vec[i] == 6 || vec[i] == 7 || vec[i] == 13 || vec[i] == 14 || vec[i] == 20 || vec[i] == 21 || vec[i] == 27 || vec[i] == 28)
+            continue;
+        else
+            getHolidays++;
     }
 
-    for (i = 1; i <= k; i++)
-        cout << i << " ";
-
-    for (i = k + 1; i <= n; i++)
-        cout << 1 << " ";
-
-    cout << endl;
+    cout << getHolidays << endl;
 }
 
 int main()
