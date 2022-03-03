@@ -27,6 +27,23 @@ using namespace std;
 
 void solve()
 {
+    int n, k, previous = 0, i, j;
+    cin >> n >> k;
+    vector<int> vec(k), result;
+    for (i = 0; i < k; i++)
+        cin >> vec[i];
+
+    for (i = 0; i < k; i++)
+    {
+        for (j = vec[i]; j > previous; j--)
+            result.push_back(j);
+        previous = vec[i];
+    }
+
+    for (auto it : result)
+        cout << it << " ";
+
+    cout << endl;
 }
 
 int main()

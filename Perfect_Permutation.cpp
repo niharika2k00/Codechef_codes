@@ -30,9 +30,24 @@ void solve()
     int n, k, i;
     cin >> n >> k;
 
+    if (k > n)
+    {
+        cout << "-1" << endl;
+        return;
+    }
+
     if (n == 1 && k == 1)
     {
         cout << 1 << endl;
+        return;
+    }
+
+    if (k == n)
+    {
+        for (i = 1; i <= n; i++)
+            cout << i << " ";
+
+        cout << endl;
         return;
     }
 
